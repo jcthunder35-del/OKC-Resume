@@ -1,0 +1,158 @@
+/* 1. CUSTOM BACKGROUND & GLOBAL STYLES */
+body {
+    /* "Cooler" Dark Navy Gradient - No white backgrounds here! */
+    background: radial-gradient(circle at top, #0b1e3b 0%, #050a12 100%);
+    background-attachment: fixed;
+    
+    /* 2. SPECIFY FONT FAMILY (Athletic/Impactful) */
+    font-family: 'Impact', 'Arial Black', sans-serif; 
+    
+    /* 3. SPECIFY FONT COLOR */
+    color: #ffffff;
+    
+    margin: 0;
+    padding: 0;
+    letter-spacing: 0.5px;
+}
+
+/* DIV 1: Main content container for positioning */
+.content-wrapper {
+    max-width: 900px;
+    margin: 40px auto;
+    background-color: rgba(255, 255, 255, 0.05); /* Slight transparency */
+    padding: 50px;
+    border: 1px solid rgba(0, 122, 193, 0.3);
+    border-radius: 8px;
+}
+
+/* DIV 2: Header section for styling block content */
+.header-box {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.athletic-font {
+    font-size: 3.5rem;
+    color: #00aec1; /* OKC Blue */
+    margin: 0;
+    text-shadow: 2px 2px 0px #EF3B24; /* OKC Orange drop shadow */
+}
+
+.accent-bar {
+    height: 4px;
+    width: 80px;
+    background-color: #EF3B24;
+    margin: 15px auto;
+}
+
+.sub-headline {
+    font-family: 'Arial', sans-serif;
+    font-weight: bold;
+    letter-spacing: 4px;
+    color: #bdc3c7;
+    text-transform: uppercase;
+}
+
+/* DIV 3: Roster info block for layout */
+.info-block {
+    background: rgba(0, 45, 98, 0.4);
+    padding: 30px;
+    border-left: 6px solid #007AC1;
+    margin: 40px 0;
+}
+
+.section-title {
+    color: #EF3B24;
+    font-size: 1.8rem;
+    border-bottom: 1px solid #444;
+    padding-bottom: 10px;
+    text-transform: uppercase;
+}
+
+/* Nested List Styling */
+.roster-list {
+    font-size: 1.4rem;
+    line-height: 2.2;
+}
+
+/* Update this section in your fromScratchstyles.css */
+ul.skills-list {
+    font-family: 'Verdana', sans-serif !important; /* The !important ensures it overrides any first-child quirks */
+    font-size: 0.95rem;
+    font-weight: normal;
+    color: #dcdde1;
+    line-height: 1.4;
+    margin-bottom: 20px;
+}
+
+/* Add this to make sure the list items themselves don't try to use the 'Impact' font from the body */
+.skills-list li {
+    font-family: 'Verdana', sans-serif;
+}
+
+/* Media styling */
+.main-photo {
+    width: 100%;
+    border-bottom: 5px solid #EF3B24;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+.caption {
+    font-family: 'Georgia', serif;
+    font-style: italic;
+    font-size: 0.85rem;
+    color: #95a5a6;
+    text-align: right;
+    margin-top: 10px;
+}
+
+/* Video Responsive Container */
+.video-wrapper {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 ratio */
+    height: 0;
+    overflow: hidden;
+}
+
+.video-wrapper iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/* Navigation & Footer Positioning */
+.nav-bar {
+    background: #050a12;
+    padding: 20px;
+    text-align: center;
+    border-bottom: 1px solid #333;
+}
+
+.nav-bar a {
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 0.85rem;
+    font-family: sans-serif;
+}
+
+.nav-bar a:hover {
+    color: #007ac1;
+}
+
+.footer {
+    text-align: center;
+    padding: 40px 0;
+}
+
+.top-link {
+    color: #EF3B24;
+    text-decoration: none;
+    font-size: 0.8rem;
+    border: 1px solid #EF3B24;
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-family: sans-serif;
+}

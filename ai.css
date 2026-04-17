@@ -1,0 +1,74 @@
+/* GLOBAL RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* BACKGROUND STYLE */
+body {
+    background-color: #050a12 !important; /* Deep Navy */
+    background: radial-gradient(circle at top, #0b1e3b 0%, #050a12 100%) !important;
+    color: white !important;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif !important;
+    padding: 40px;
+}
+
+/* TRIVIA CONTAINER STYLE */
+#game-section.app-container {
+    max-width: 700px;
+    margin: 60px auto;
+    background: rgba(255, 255, 255, 0.08);
+    padding: 50px;
+    border-radius: 12px;
+    border: 3px solid #007AC1; /* OKC Blue */
+    text-align: center;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.6);
+}
+
+/* BUTTON STYLES (The Grid) */
+.options-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Two buttons per row */
+    gap: 15px;
+    margin-top: 30px;
+}
+
+/* INDIVIDUAL BUTTONS */
+button.trivia-btn {
+    background-color: #007AC1 !important;
+    color: white !important;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 18px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+}
+
+button.trivia-btn:hover {
+    background-color: #EF3B24 !important; /* OKC Orange */
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(239, 59, 36, 0.4);
+}
+
+/* FEEDBACK & RESET */
+#feedback-msg {
+    margin-top: 20px;
+    font-size: 1.3rem;
+    font-weight: 800;
+    height: 30px;
+}
+
+.reset-btn {
+    margin-top: 25px;
+    background: white;
+    color: #050a12;
+    padding: 12px 30px;
+    border-radius: 30px;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+}

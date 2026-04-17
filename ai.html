@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OKC Thunder | 2026 Future</title>
+    <link rel="stylesheet" href="./css/ai.css">
+</head>
+<body>
+
+    <div class="app-container" id="game-section">
+        <h2 class="section-title">THUNDER NATION TRIVIA</h2>
+        <p id="progress">Question 1 of 5</p>
+        
+        <div class="trivia-ui">
+            <h3 id="question-text">Loading question...</h3>
+            <div id="answer-options" class="options-grid">
+                </div>
+            <p id="feedback-msg"></p>
+            <div id="score-board" style="display:none;">
+                <h4>Final Score: <span id="final-score">0</span>/5</h4>
+                <button onclick="resetTrivia()" class="reset-btn">Play Again</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const triviaData = [
+            {
+                q: "Who holds the record for the most triple-doubles in Thunder history?",
+                options: ["Kevin Durant", "Russell Westbrook", "Shai Gilgeous-Alexander", "James Harden"],
+                correct: 1
+            },
+            {
+                q: "What year did the Thunder reach the NBA Finals?",
+                options: ["2010", "2011", "2012", "2014"],
+                correct: 2
+            },
+            {
+                q: "Which player was known as the 'Unicorn' before joining the Thunder?",
+                options: ["Chet Holmgren", "Steven Adams", "Serge Ibaka", "Aleksej Pokuševski"],
+                correct: 0
+            },
+            {
+                q: "In 2024, Shai Gilgeous-Alexander finished in the top 3 for which award?",
+                options: ["Rookie of the Year", "Defensive Player of the Year", "Most Valuable Player", "Sixth Man of the Year"],
+                correct: 2
+            },
+            {
+                q: "What is the nickname for the Thunder's home arena?",
+                options: ["The Peake", "Loud City", "The Blue Zone", "Thunder Alley"],
+                correct: 1
+            }
+        ];
+
+        let currentQuestion = 0;
+        let score = 0;
+
+        function loadQuestion() {
+            const qData = triviaData[currentQuestion];
+            document.getElementById('question-text').textContent = qData.q;
+            document.getElementById('progress').textContent = `Question ${currentQuestion + 1} of 5`;
+            
+            const optionsDiv = document.getElementById('answer-options');
+            optionsDiv.innerHTML = '';
+            
+            qData.options.forEach((opt, index) => {
+                const btn = document.createElement('button');
+                btn.textContent = opt;
+                btn.className = 'trivia-btn';
+                btn.onclick = () => checkAnswer(index);
+                optionsDiv.appendChild(btn);
+            });
+        }
+
+        function checkAnswer(choice) {
+            const feedback = document.getElementById('feedback-msg');
+            if (choice === triviaData[currentQuestion].correct) {
+                score++;
+                feedback.textContent = "Correct! Swish! 🏀";
+                feedback.style.color = "#007AC1";
+            } else {
+                feedback.textContent = "Airball! Incorrect.";
+                feedback.style.color = "#EF3B24";
+            }
+
+            setTimeout(() => {
+                feedback.textContent = "";
+                currentQuestion++;
+                if (currentQuestion < triviaData.length) {
+                    loadQuestion();
+                } else {
+                    showResults();
+                }
+            }, 1500);
+        }
+
+        function showResults() {
+            document.getElementById('question-text').style.display = 'none';
+            document.getElementById('answer-options').style.display = 'none';
+            document.getElementById('score-board').style.display = 'block';
+            document.getElementById('final-score').textContent = score;
+        }
+
+        function resetTrivia() {
+            currentQuestion = 0;
+            score = 0;
+            document.getElementById('question-text').style.display = 'block';
+            document.getElementById('answer-options').style.display = 'grid';
+            document.getElementById('score-board').style.display = 'none';
+            loadQuestion();
+        }
+
+        loadQuestion();
+    </script>
+</body>
+</html>
